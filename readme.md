@@ -1,10 +1,12 @@
 1.Create venv for local setup
 python -m venv venv
-2.Activate the Virtual Environment
-https://saturncloud.io/blog/how-to-set-up-virtual-environments-in-visual-studio-code-for-jupyter-notebooks/#:~:text=follow%20these%20steps%3A-,Open%20VS%20Code,python%20%2Dm%20venv
 
+2.Activate the Virtual Environment
 venv\Scripts\activate
 
-3. (venv) PS D:\DataScience\LLM\Altimetrik-Ask-Me-Anything> 
+3. Inside (venv) do
+pip install -r ./requirements.txt 
 
-pip install streamlit PyPDF2 python-dotenv openai faiss-cpu huggingface-hub langchain tiktoken InstructorEmbedding sentence-transformers
+4. Place you openAI key/Hugging face token in .env files
+OPENAI_API_KEY=
+HUGGINGFACEHUB_API_TOKEN=
