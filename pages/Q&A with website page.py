@@ -16,6 +16,8 @@ from langchain.prompts.chat import (ChatPromptTemplate,
 from langchain.document_loaders import WebBaseLoader
 from langchain.chains import RetrievalQA
 
+import requests
+from bs4 import BeautifulSoup
 
 # def get_pdf_text(pdf_docs):
 #     text =""
@@ -24,6 +26,18 @@ from langchain.chains import RetrievalQA
 #         for page in pdf_reader.pages:
 #             text += page.extract_text() 
 #     return text        
+
+def get_all_links(url):
+    response = requests.get(url)
+    bsoup = BeautifulSoup(response.text,'html.parser')
+    alllinks = bsoup.findAll('a')
+    Links=[]
+    for link in alllinks:
+        href_link = link.get('href')
+        if href_link.startswith('https://') or href_link.startswith('https://'):
+            if href_link not in Links:
+                Links.append(link.get('href'))
+    return Links            
 
 def get_text_chunks(text):
     text_splitter = CharacterTextSplitter(separator="\n",
@@ -37,6 +51,8 @@ def get_text_chunks(text):
 #Todo:
 #Right now we are using FAISS as VectorStore and also locally which will get destroyed once the app got killed.
 # In Future change as external DB for Persistence. (Qadrant)
+
+
 
 def get_vector_store(text_chunks):
     #embeddings = OpenAIEmbeddings()
@@ -72,7 +88,7 @@ def handle_userinput(user_question):
 
 def main():
     load_dotenv()
-    st.set_page_config(page_title='Altimetrik Ask Me Anything From PDF passed',page_icon=":books:")
+    st.set_page_config(page_title='Ask Me Anything From WebPage',page_icon=":webpages:")
     st.write(css, unsafe_allow_html=True)
 
     if "conversation" not in st.session_state:
@@ -80,8 +96,8 @@ def main():
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
     
-    st.header("Altimetrik's Ask Me Anything From PDF passed :books:")
-    user_question = st.text_input("Ask a question about your documents:")
+    st.header("Ask Me Anything From PDF passed :webpages:")
+    user_question = st.text_input("Ask a question from a webpage:")
     if user_question:
         handle_userinput(user_question)
 
@@ -95,7 +111,11 @@ def main():
             with st.spinner("Processing..."):
                 # Get text from PDF's
                 # raw_text = get_pdf_text(pdf_docs)
-                loader = WebBaseLoader(url)
+                all_url_list = get_all_links(url)
+                st.write(all_url_list)
+                st.info("Out of all, only 5 taken for demo")
+                st.write(all_url_list[:5])
+                loader = WebBaseLoader(all_url_list[:5])
                 data = loader.load()
                 #Get Text Chunks
                 text_chunks = get_text_chunks(data)

@@ -16,3 +16,5 @@ sentence-transformers==2.2.2
 unstructured[pdf]
 tqdm
 gTTS
+requests
+bs4
