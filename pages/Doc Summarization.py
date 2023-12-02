@@ -5,6 +5,9 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains.summarize import load_summarize_chain
 from PyPDF2 import PdfReader
 from langchain.llms import HuggingFaceHub
+from io import BytesIO
+from gtts import gTTS
+
 
 def get_pdf_text(pdf_docs):
     text =""
@@ -13,6 +16,14 @@ def get_pdf_text(pdf_docs):
         for page in pdf_reader.pages:
             text += page.extract_text() 
     return text    
+
+def generate_audio(text,lang='en'):
+    sound_file=BytesIO()
+    tts = gTTS(text, lang=lang)
+    tts.write_to_fp(sound_file)
+    st.audio(sound_file)
+
+
 
 def generate_response(txt):
     # Instantiate the LLM model
@@ -53,3 +64,4 @@ with st.form('summarize_form', clear_on_submit=True):
 
 if len(result):
     st.info(response)
+    generate_audio(response) 
