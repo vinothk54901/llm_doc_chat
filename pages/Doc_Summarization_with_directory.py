@@ -6,6 +6,10 @@ from langchain.chains.summarize import load_summarize_chain
 from PyPDF2 import PdfReader
 from langchain.llms import HuggingFaceHub
 from langchain.document_loaders import DirectoryLoader
+from st_pages import show_pages_from_config, add_page_title
+
+add_indentation()
+show_pages_from_config()
 
 def get_pdf_text(pdf_docs):
     text =""

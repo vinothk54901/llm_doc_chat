@@ -1,0 +1,45 @@
+[[pages]]
+path = "app.py"
+name = "Home"
+icon = "🏠"
+
+
+[[pages]]
+name = "Q&A-Chat"
+icon = "❓"
+is_section = true
+
+[[pages]]
+path = "pages/Q&A_with_doc.py"
+name = "Document"
+icon = "📜"
+
+
+
+[[pages]]
+path = "pages/Q&A_with_website_page.py"
+name = "WebPage_URL"
+icon = "🌏"
+
+
+[[pages]]
+name = "Summarization"
+icon = "📝"
+is_section = true
+
+[[pages]]
+path = "pages/Doc_Summarization.py"
+name = "Document"
+icon = "📜"
+
+[[pages]]
+path = "pages/Doc_Summarization_with_directory.py"
+name = "Directory"
+icon = "📂"
+
+[[pages]]
+path = "pages/Text_Summarization.py"
+name = "Text"
+icon = "📰"
+
+
