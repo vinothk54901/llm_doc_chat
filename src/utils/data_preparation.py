@@ -15,11 +15,11 @@ from typing import List
 def get_docs_from_directory(directory_path:str,st_session:streamlit):
     extensions = ['pdf','txt','docx']
     documents= None
+    loaded_documents: List[Document] = []
     for ext in extensions:
         try:
             st_session.write(ext)
             loader = None
-            loaded_documents: List[Document] = []
             glob_pattern = f'**/*.{ext}'
             if ext =="pdf":
                 st_session.write("entered pdf")
