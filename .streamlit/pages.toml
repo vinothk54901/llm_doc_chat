@@ -1,7 +1,8 @@
+
 [[pages]]
 path = "app.py"
-name = "Home"
-icon = "🏠"
+name = "AskMeAnything-Home"
+icon = ":robot_face:"
 
 
 [[pages]]
@@ -10,16 +11,27 @@ icon = "❓"
 is_section = true
 
 [[pages]]
-path = "pages/Q&A_with_doc.py"
+path = "src/qa_with_doc.py"
 name = "Document"
 icon = "📜"
 
 
+[[pages]]
+path = "src/qa_from_directory.py"
+name = "Directory"
+icon = "📂"
+
 
 [[pages]]
-path = "pages/Q&A_with_website_page.py"
+path = "src/qa_with_website.py"
 name = "WebPage_URL"
 icon = "🌏"
+
+[[pages]]
+path = "src/qa_with_github_issues.py"
+name = "Github_Issue"
+icon = ":Git:"
+
 
 
 [[pages]]
@@ -28,17 +40,23 @@ icon = "📝"
 is_section = true
 
 [[pages]]
-path = "pages/Doc_Summarization.py"
+path = "src/Doc_Summarization.py"
 name = "Document"
 icon = "📜"
 
 [[pages]]
-path = "pages/Doc_Summarization_with_directory.py"
+path = "src/Github_Issue_Summarization.py"
+name = "Github_Issues"
+icon = ":Git:"
+
+
+[[pages]]
+path = "src/Doc_Summarization_with_directory.py"
 name = "Directory"
 icon = "📂"
 
 [[pages]]
-path = "pages/Text_Summarization.py"
+path = "src/Text_Summarization.py"
 name = "Text"
 icon = "📰"
 

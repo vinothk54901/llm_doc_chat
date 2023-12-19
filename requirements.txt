@@ -1,4 +1,4 @@
-langchain==0.0.184
+langchain==0.0.345
 PyPDF2==3.0.1
 python-dotenv==1.0.0
 streamlit==1.18.1
@@ -13,8 +13,14 @@ huggingface-hub==0.14.1
 InstructorEmbedding==1.0.1
 sentence-transformers==2.2.2
 
-unstructured[pdf]
+docx2txt
+#unstructured[pdf]
+unstructured[all-docs]
 tqdm
 gTTS
+#playsound
+#pydub
 requests
 bs4
+
+st-pages

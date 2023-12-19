@@ -4,10 +4,10 @@ css = '''
     padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 1rem; display: flex
 }
 .chat-message.user {
-    background-color: #2b313e
+    background-color: #F0F2F6
 }
 .chat-message.bot {
-    background-color: #475063
+    background-color: #D3D3D3
 }
 .chat-message .avatar {
   width: 20%;
@@ -21,14 +21,14 @@ css = '''
 .chat-message .message {
   width: 80%;
   padding: 0 1.5rem;
-  color: #fff;
+  color: #000000;
 }
 '''
 
 bot_template = '''
 <div class="chat-message bot">
     <div class="avatar">
-        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/646dde13653589.56276648d04c6.png" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover;">
+        <img src="https://icon-library.com/images/robot-icon-png/robot-icon-png-5.jpg" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover;">
     </div>
     <div class="message">{{MSG}}</div>
 </div>
@@ -37,7 +37,7 @@ bot_template = '''
 user_template = '''
 <div class="chat-message user">
     <div class="avatar">
-        <img src="https://i.ibb.co/rdZC7LZ/Photo-logo-1.png">
+        <img src="https://logodix.com/logo/1070602.png">
     </div>    
     <div class="message">{{MSG}}</div>
 </div>
