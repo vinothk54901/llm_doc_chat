@@ -1,6 +1,6 @@
 # 🧠 RAG-Based Document Chatbot
 
-This repository contains a Retrieval-Augmented Generation (RAG) based chatbot application built for a hackathon. It enables intelligent question-answering and summarization over diverse data sources including documents, directories, and websites. The application leverages vector-based retrieval for efficient and accurate responses, and features a user-friendly Streamlit frontend with voice chat support.
+This repository contains a Retrieval-Augmented Generation (RAG) based chatbot application. It enables intelligent question-answering and summarization over diverse data sources including documents, directories, and websites. The application leverages vector-based retrieval for efficient and accurate responses, and features a user-friendly Streamlit frontend with voice chat support.
 
 ## 🏗️ Architecture Diagram
 ![Architecture Diagram](./Images/arc.drawio.svg) 
