@@ -9,7 +9,7 @@ This repository contains a Retrieval-Augmented Generation (RAG) based chatbot ap
 
 
 1. **📄 Document Summarization**
-   - Upload individual files (PDF, DOCX, TXT, etc.) to generate concise summaries using LLM-powered summarization.
+   - Upload individual files (PDF) to generate concise summaries using LLM-powered summarization.
 
 2. **📁 Directory-Based Q&A**
    - Point to a directory containing documents. The app recursively indexes all supported files and makes them available for semantic search and question-answering.
@@ -37,6 +37,9 @@ This repository contains a Retrieval-Augmented Generation (RAG) based chatbot ap
 ## 🏗️ LLM Provider Abstraction
 
 To support multiple LLM providers seamlessly, the application uses the **Factory Pattern**. This design allows dynamic selection of the language model backend (e.g., OpenAI or Hugging Face) based on selection from Streamlit frontend.
+
+## To DO:
+Support multiple document types like excel,ppt,docx and support complex tables , images inside a document
 
 ## 🏁 Getting Started
 
